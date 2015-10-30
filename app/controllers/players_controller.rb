@@ -19,6 +19,9 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    @questions = Question.all
+    size = @questions.size
+    @question = Question.find(1 + rand(size))
   end
 
   def edit
