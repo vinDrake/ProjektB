@@ -5,3 +5,6 @@ ID<%= @player.id %> is
 <%= @player.name %><br>
 <%= @questions %>
 <%= @question.question_therm %>
+<%= link_to "Show answer", question_path(@question) %>
+<br>
+<%= link_to 'Back', players_path %>

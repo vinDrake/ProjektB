@@ -3,5 +3,12 @@
 
 
 <% @players.each do |p| %>
-<%= p.name %><br>
+<%= p.name %>
+<%= link_to "Show", player_path(p) %>
+<br>
 <% end %>
+
+<br>
+
+<%= link_to 'New Player', new_player_path %>
+<%= link_to "Questions", questions_path %>
