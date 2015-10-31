@@ -1,0 +1,8 @@
+<h1>Duels#new</h1>
+<p>Find me in app/views/duels/new.html.erb</p>
+
+
+<%= form_for @duel do |f| %>
+  <%= f.select :player_two_id, @player_select.map {|p| [p.name,p.id]} %>
+  <%= f.submit %>
+<% end %>

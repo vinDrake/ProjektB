@@ -1,0 +1,9 @@
+<h1>Duels#index</h1>
+<p>Find me in app/views/duels/index.html.erb</p>
+
+
+<% @duels.each do |d| %>
+  <%= d.player_one %><%= d.player_two %><br>
+<% end %>
+
+<%= link_to 'New', new_duel_path %>

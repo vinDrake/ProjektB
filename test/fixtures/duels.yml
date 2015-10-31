@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question_set: MyString
+  finish: false
+  player_one_id: 
+  player_two_id: 
+
+two:
+  question_set: MyString
+  finish: false
+  player_one_id: 
+  player_two_id: 
