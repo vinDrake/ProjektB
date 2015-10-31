@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151031072959) do
+=======
+ActiveRecord::Schema.define(version: 20151031103411) do
+
+  create_table "answers", force: :cascade do |t|
+    t.boolean  "correct"
+    t.integer  "player_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "answers", ["player_id"], name: "index_answers_on_player_id"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+>>>>>>> refs/heads/Answers
 
   create_table "players", force: :cascade do |t|
     t.string   "name"

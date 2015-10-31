@@ -23,6 +23,7 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     @questions = Question.all
+<<<<<<< HEAD
     size = @questions.size
     if @player.question_feed
       @question_feed = @player.question_feed.split(',').collect! {|n| n.to_i}
@@ -38,6 +39,12 @@ class PlayersController < ApplicationController
 #    @player.question_feed = @question_feed.to_s
     @player.update(:question_feed => @question_feed.to_s)
     @question = Question.find(@question_feed.last)
+=======
+    if @questions.any?
+      size = @questions.size
+      @question = Question.find((1 + rand(size)).to_i)
+    end
+>>>>>>> refs/heads/Answers
   end
 
   def edit

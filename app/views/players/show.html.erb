@@ -7,6 +7,10 @@ ID<%= @player.id %> is
 <br>
 <%= @questions %>
 <%= @question.question_therm %>
-<%= link_to "Show answer", question_path(@question) %>
+<%= link_to "Show answer", player_question_path(@player, @question) %>
+<br>
+<%= @player.answers %>
+<br>
+<%= @player.questions %>
 <br>
 <%= link_to 'Back', players_path %>
