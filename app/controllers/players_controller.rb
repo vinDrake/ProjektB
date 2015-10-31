@@ -6,14 +6,20 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-    @questions = Question.all
-    size = @questions.size
-    @player.question_feed = Array.new( 1 + rand(size), 1 + rand(size)).delete_at(0).to_s
     if @player.save
-      redirect_to '/players'
+      session[:player_id] = @player.id
+      redirect_to '/'
     else
-      render 'new'
+      redirect_to '/signup'
     end
+    # @questions = Question.all
+    # size = @questions.size
+    # @player.question_feed = Array.new( 1 + rand(size), 1 + rand(size)).delete_at(0).to_s
+    # if @player.save
+    #   redirect_to '/players'
+    # else
+    #   render 'new'
+    # end
 
   end
 
@@ -50,7 +56,7 @@ class PlayersController < ApplicationController
 
   private
   def player_params
-    params.require(:player).permit(:name)
+    params.require(:player).permit(:name, :email, :password)
   end
 
 end
