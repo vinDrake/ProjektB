@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:question_therm, :correct_answer, :wrong_answer)
+    params.require(:question).permit(:question_therm, :correct_answer, :wrong_answer, :category)
   end
 
 end

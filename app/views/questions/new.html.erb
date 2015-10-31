@@ -3,9 +3,14 @@
 
 
 <%= form_for @question  do |f| %>
-<%= f.text_field :question_therm %>
-<%= f.text_field :correct_answer %>
-<%= f.text_field :wrong_answer %>
+Therm:
+<%= f.text_field :question_therm %><br>
+Correct Answer:
+<%= f.text_field :correct_answer %><br>
+Wrong Answer:
+<%= f.text_field :wrong_answer %><br>
+Category:
+<%= f.text_field :category %><br>
 <%= f.submit "Create" %>
 
 <% end %>
