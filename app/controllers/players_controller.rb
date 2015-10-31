@@ -20,8 +20,10 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     @questions = Question.all
-    size = @questions.size
-    @question = Question.find(1 + rand(size))
+    if @questions.any?
+      size = @questions.size
+      @question = Question.find((1 + rand(size)).to_i)
+    end
   end
 
   def edit
