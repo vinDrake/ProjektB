@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+#    @player = Player.find(params[:player_id])
     @question = Question.find(params[:id])
   end
 
