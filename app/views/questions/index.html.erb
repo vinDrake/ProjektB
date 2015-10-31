@@ -2,9 +2,9 @@
 <p>Find me in app/views/questions/index.html.erb</p>
 
 
-<% @questions.each do |q| %>
+<%= @questions.each do |q| %>
 <%= q.question_therm %>?
-<%= q.correct_answer %>!
+<%= q.wrong_answer %>
 <br>
 
 <br>
