@@ -1,25 +1,22 @@
 class PlayersController < ApplicationController
-
+  before_action :require_player, only: [:index, :show]
   def new
     @player = Player.new
   end
 
   def create
     @player = Player.new(player_params)
+    @questions = Question.all
+    size = @questions.size
+    @player.question_feed = Array.new( 1 + rand(size), 1 + rand(size)).delete_at(0).to_s
+
     if @player.save
       session[:player_id] = @player.id
-      redirect_to '/'
+      redirect_to '/players'
     else
       redirect_to '/signup'
     end
-    # @questions = Question.all
-    # size = @questions.size
-    # @player.question_feed = Array.new( 1 + rand(size), 1 + rand(size)).delete_at(0).to_s
-    # if @player.save
-    #   redirect_to '/players'
-    # else
-    #   render 'new'
-    # end
+  
 
   end
 
@@ -28,7 +25,9 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @player = Player.find(params[:id])
+    @session = session
+    @player = Player.find(@session[:player_id])
+  #  @player = Player.find(params[:id])
     @questions = Question.all
     size = @questions.size
     @question = Question.find(size-1 )#+ rand(size))

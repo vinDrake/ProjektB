@@ -18,7 +18,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @player = Player.find(params[:player_id])
+    @session = session
+    @player = Player.find(@session[:player_id])#params[:player_id])
     @question = Question.find(params[:id])
     @answers = [ @question.correct_answer, @question.wrong_answer ]
   end

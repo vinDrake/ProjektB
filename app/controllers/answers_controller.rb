@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :require_player, only: [:index, :show]
   def new
     @answer = Answer.new
   end
