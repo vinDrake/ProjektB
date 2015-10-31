@@ -6,7 +6,7 @@ ID<%= @player.id %> is
 <%= @question_feed %><br>
 <%= @questions %>
 <%= @question.question_therm %>
-<%= link_to "Show", question_path( :question_id => 1) %>
+<%= link_to "Show", question_path( :question_id => @question.id , :player_id => @player.id) %>
 
 
 
