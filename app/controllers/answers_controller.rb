@@ -6,9 +6,13 @@ class AnswersController < ApplicationController
   def create
 #    @player = Player.find(params[:player_id])
     @question = Question.find(params[:question_id])
+
     @answer = @question.answers.create(answer_params)
+
     if @answer.save
-      redirect_to players_path
+    #  if @answer.update(:correct => "f")
+        redirect_to players_path
+    #  end
     else
       render 'new'
     end
@@ -24,6 +28,8 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:correct, :question_id, :player_id)
+    ap = params.require(:answer).permit(:correct, :question_id, :player_id)
+    ap[:correct] = "f"
+    return ap
   end
 end
