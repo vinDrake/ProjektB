@@ -6,4 +6,11 @@
 <%= q.question_therm %>?
 <%= q.correct_answer %>!
 <br>
+<%= link_to "Show", question_path(q) %>
+<br>
 <% end %>
+
+<br>
+
+<%= link_to "New Question", new_question_path %>
+<%= link_to "Players", players_path %>
