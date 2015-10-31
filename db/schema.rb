@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151031072959) do
-=======
 ActiveRecord::Schema.define(version: 20151031103411) do
 
   create_table "answers", force: :cascade do |t|
@@ -26,7 +23,6 @@ ActiveRecord::Schema.define(version: 20151031103411) do
 
   add_index "answers", ["player_id"], name: "index_answers_on_player_id"
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
->>>>>>> refs/heads/Answers
 
   create_table "players", force: :cascade do |t|
     t.string   "name"
