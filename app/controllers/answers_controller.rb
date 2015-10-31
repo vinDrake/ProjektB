@@ -24,6 +24,12 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:correct, :question_id, :player_id)
+    ap = params.require(:answer).permit(:correct, :question_id, :player_id, :guess)
+    if ap[:guess] == @question.correct_answer
+      ap[:correct] = "t"
+    else
+      ap[:correct] = "f"
+    end
+    return ap
   end
 end

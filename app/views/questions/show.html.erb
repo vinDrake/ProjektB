@@ -13,7 +13,10 @@
 <br>
 
 <%= form_for([ @question, @question.answers.build ]) do |f| %>
-<%= f.hidden_field :player_id, { :value => @player.id } %>
+<%= f.hidden_field :result, { :value => "UiUiUi" } %>
+<% @answers.each do |a| %>
+<%= f.radio_button :guess , a  %> <%= a %>
+<% end %>
 
 <%= f.check_box :correct %><br>
 <%= f.submit %><br>

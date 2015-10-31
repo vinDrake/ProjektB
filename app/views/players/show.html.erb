@@ -3,9 +3,10 @@
 
 ID<%= @player.id %> is
 <%= @player.name %><br>
+<%= @question_feed %><br>
 <%= @questions %>
 <%= @question.question_therm %>
-<%= link_to "Show answer", player_question_path(@player, @question) %>
+<%= link_to "Show", question_path( :question_id => 1) %>
 
 
 

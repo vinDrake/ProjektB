@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
   def show
 #    @player = Player.find(params[:player_id])
     @question = Question.find(params[:id])
+    @answers = [ @question.correct_answer, @question.wrong_answer ]
   end
 
   def edit
