@@ -27,7 +27,7 @@ class PlayersController < ApplicationController
   def show
     @session = session
     @player = Player.find(@session[:player_id])
-    @duels = @player.duels
+#    @duels = @player.duels
   #  @player = Player.find(params[:id])
     @questions = Question.all
     size = @questions.size

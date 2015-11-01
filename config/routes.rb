@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'duels/new'
-
-  get 'duels/create'
-
-  get 'duels/index'
-
-  get 'duels/show'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -38,6 +30,10 @@ Rails.application.routes.draw do
   end
   resources :answers
   resources :duels
+  resources :challenges do
+    resources :tickets
+  end
+  resources :tickets
 
   # Example resource route with options:
   #   resources :products do
