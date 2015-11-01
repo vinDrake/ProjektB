@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101110427) do
+ActiveRecord::Schema.define(version: 20151101112622) do
 
   create_table "answers", force: :cascade do |t|
     t.boolean  "correct"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(version: 20151101110427) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "challenges", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "name"
     t.boolean  "alive"
+    t.text     "question_array"
   end
 
   create_table "duels", force: :cascade do |t|
