@@ -3,3 +3,6 @@
 
 
 <%= @challenge.name %>
+<% @challenge.tickets.each do |t| %>
+  <%= t.id %> <%= t.player.name %> is <%=  t.complete %><br>
+<% end %>

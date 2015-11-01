@@ -1,5 +1,6 @@
 class ChallengesController < ApplicationController
   def new
+
     @challenge = Challenge.new
   end
 
@@ -22,7 +23,8 @@ class ChallengesController < ApplicationController
 
   private
   def challenge_params
-     params.require(:challenge).permit(:name)
-
+     cp = params.require(:challenge).permit(:name)
+     cp[:alive] = "t"
+     return cp
   end
 end

@@ -3,7 +3,9 @@
 
 
 <%= form_for @ticket do |f| %>
-  <%= f.hidden_field :challenge_id, { :value => "2" } %>
+  
+  <%= f.select :challenge_id, @challenge_select.map {|c| [c.name,c.id]} %>
+  <%= f.datetime_select :end_time %>
   <%= f.submit %>
 
 <% end %>
